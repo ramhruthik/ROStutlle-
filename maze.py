@@ -1,11 +1,11 @@
 import time
-from robot_control_class import RobotControl #importa uma classe
-robotcontrol = RobotControl() #criando um objeto
+from robot_control_class import RobotControl 
+robotcontrol = RobotControl() 
 
 class Robo:
 
     def __init__(self):
-        print("inicializando...")
+        print("intializing...")
         self.laser1 = robotcontrol.get_laser(360)
         self.robotmove_speed = 5
         self.robotmove_time = 1
