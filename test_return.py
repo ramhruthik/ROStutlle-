@@ -14,6 +14,5 @@ value[1] = input('value 2:')
 value[2] = input('value 3:')
 print(value)
 
-#robotmove(5)
 laser1 = robotcontrol.get_laser(360)
 print(laser1)
