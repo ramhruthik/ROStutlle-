@@ -35,11 +35,6 @@ class RobotControl():
         rospy.on_shutdown(self.shutdownhook)
 
     def publish_once_in_cmd_vel(self):
-        """
-        This is because publishing in topics sometimes fails the first time you publish.
-        In continuos publishing systems there is no big deal but in systems that publish only
-        once it IS very important.
-        """
         while not self.ctrl_c:
             connections = self.vel_publisher.get_num_connections()
             summit_connections = self.summit_vel_publisher.get_num_connections()
@@ -165,7 +160,6 @@ class RobotControl():
 
     def get_odom(self):
 
-        # Get the current transform between the odom and base frames
         tf_ok = 0
         while tf_ok == 0 and not rospy.is_shutdown():
             try:
@@ -189,7 +183,6 @@ class RobotControl():
         # Get the current position
         (position, rotation) = self.get_odom()
 
-        # Set the movement command to a rotation
         if degrees > 0:
             self.cmd.angular.z = 0.3
         else:
