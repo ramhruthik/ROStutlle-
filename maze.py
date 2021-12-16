@@ -44,7 +44,7 @@ if __name__ == '__main__':
 
     robo = Robo()
 
-    while not robotcontrol.ctrl_c:
+    while not robotcontrol.ctrl_c_f:
 
         robo.robotmove()
         robo.robotturn()
